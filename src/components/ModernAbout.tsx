@@ -20,7 +20,7 @@ export default function ModernAbout() {
           <div className="relative">
             <div className="relative w-80 h-80 mx-auto rounded-2xl overflow-hidden">
               <Image
-                src="/src/app/assets/profile.jpg"
+                src="/profile.jpg"
                 alt="About Luis Guedes"
                 width={320}
                 height={320}

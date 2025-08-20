@@ -10,7 +10,7 @@ export default function AboutSection() {
             <div className="relative">
               <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-ciano mx-auto">
                 <Image
-                  src="/src/app/assets/profile.jpg"
+                  src="/profile.jpg"
                   alt="Sobre Luis Guedes"
                   width={320}
                   height={320}

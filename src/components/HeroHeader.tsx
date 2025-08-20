@@ -11,7 +11,7 @@ export default function HeroHeader() {
         <div className="flex flex-col items-center lg:items-start gap-6">
           <div className="rounded-full overflow-hidden border-4 border-ciano shadow-2xl w-48 h-48 lg:w-56 lg:h-56 bg-marinho">
             <Image
-              src="/src/app/assets/profile.jpg"
+              src="/profile.jpg"
               alt="Foto de perfil de Luis Guedes"
               width={224}
               height={224}
