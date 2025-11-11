@@ -1,11 +1,13 @@
 import "./globals.css";
-import { ThemeProvider } from "./context/ThemeContext";
+import { ThemeProvider } from "../contexts/ThemeContext";
 import { LanguageProvider } from "../contexts/LanguageContext";
+import LoadingScreen from "../components/LoadingScreen";
 import type { ReactNode } from "react";
 
 export const metadata = {
-  title: "Portfólio Luis Guedes Dev",
-  description: "Portfólio criado em Next.js",
+  title: "Luis Guedes - Desenvolvedor Full Stack",
+  description:
+    "Portfólio de Luis Guedes - Desenvolvedor Full Stack especializado em React, Node.js e soluções modernas",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -20,7 +22,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       >
         <ThemeProvider>
           <LanguageProvider>
-            <div style={{ minHeight: "100vh", background: "var(--background)" }}>
+            <LoadingScreen />
+            <div
+              style={{ minHeight: "100vh", background: "var(--background)" }}
+            >
               {children}
             </div>
           </LanguageProvider>

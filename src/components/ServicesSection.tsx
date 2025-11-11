@@ -1,7 +1,9 @@
 "use client";
 import React from "react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function ServicesSection() {
+  const { t } = useLanguage();
   const services = [
     {
       icon: "�",
@@ -88,11 +90,10 @@ export default function ServicesSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-black text-white mb-6">
-            Serviços que <span className="text-ciano">geram resultados</span>
+            {t("services.header.title")}
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Soluções completas de desenvolvimento focadas no crescimento do seu
-            negócio
+            {t("services.header.subtitle")}
           </p>
         </div>
 
@@ -110,7 +111,7 @@ export default function ServicesSection() {
               {service.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                   <span className="bg-ciano text-marinho px-4 py-2 rounded-full text-sm font-bold">
-                    MAIS POPULAR
+                    {t("services.popular")}
                   </span>
                 </div>
               )}
@@ -151,7 +152,7 @@ export default function ServicesSection() {
                     : "bg-transparent border-2 border-ciano text-ciano hover:bg-ciano hover:text-marinho"
                 }`}
               >
-                Solicitar orçamento
+                {t("services.cta.request")}
               </button>
             </div>
           ))}
@@ -160,7 +161,7 @@ export default function ServicesSection() {
         {/* Additional Services */}
         <div className="mb-16">
           <h3 className="text-3xl font-bold text-white text-center mb-12">
-            Outros serviços disponíveis
+            {t("services.other.title")}
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -183,7 +184,7 @@ export default function ServicesSection() {
         {/* Process Section */}
         <div className="bg-gradient-to-r from-gray-800/50 to-gray-700/50 border border-gray-600 rounded-2xl p-8">
           <h3 className="text-3xl font-bold text-white text-center mb-12">
-            Como funciona nosso processo
+            {t("services.process.title")}
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -191,9 +192,11 @@ export default function ServicesSection() {
               <div className="w-16 h-16 bg-ciano/20 border-2 border-ciano rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-ciano font-bold text-xl">1</span>
               </div>
-              <h4 className="text-white font-bold mb-2">Descoberta</h4>
+              <h4 className="text-white font-bold mb-2">
+                {t("services.process.step1.title")}
+              </h4>
               <p className="text-gray-300 text-sm">
-                Entendemos seu negócio e objetivos
+                {t("services.process.step1.desc")}
               </p>
             </div>
 
@@ -201,9 +204,11 @@ export default function ServicesSection() {
               <div className="w-16 h-16 bg-ciano/20 border-2 border-ciano rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-ciano font-bold text-xl">2</span>
               </div>
-              <h4 className="text-white font-bold mb-2">Planejamento</h4>
+              <h4 className="text-white font-bold mb-2">
+                {t("services.process.step2.title")}
+              </h4>
               <p className="text-gray-300 text-sm">
-                Criamos estratégia e cronograma
+                {t("services.process.step2.desc")}
               </p>
             </div>
 
@@ -211,9 +216,11 @@ export default function ServicesSection() {
               <div className="w-16 h-16 bg-ciano/20 border-2 border-ciano rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-ciano font-bold text-xl">3</span>
               </div>
-              <h4 className="text-white font-bold mb-2">Desenvolvimento</h4>
+              <h4 className="text-white font-bold mb-2">
+                {t("services.process.step3.title")}
+              </h4>
               <p className="text-gray-300 text-sm">
-                Construímos com atualizações semanais
+                {t("services.process.step3.desc")}
               </p>
             </div>
 
@@ -221,9 +228,11 @@ export default function ServicesSection() {
               <div className="w-16 h-16 bg-ciano/20 border-2 border-ciano rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-ciano font-bold text-xl">4</span>
               </div>
-              <h4 className="text-white font-bold mb-2">Lançamento</h4>
+              <h4 className="text-white font-bold mb-2">
+                {t("services.process.step4.title")}
+              </h4>
               <p className="text-gray-300 text-sm">
-                Deploy e suporte pós-lançamento
+                {t("services.process.step4.desc")}
               </p>
             </div>
           </div>
@@ -232,14 +241,13 @@ export default function ServicesSection() {
         {/* CTA Final */}
         <div className="text-center mt-16">
           <h3 className="text-2xl font-bold text-white mb-4">
-            Não encontrou o que precisa?
+            {t("services.notfound.title")}
           </h3>
           <p className="text-gray-300 mb-6">
-            Cada projeto é único. Vamos conversar sobre suas necessidades
-            específicas.
+            {t("services.notfound.subtitle")}
           </p>
           <button className="px-8 py-4 bg-gradient-to-r from-ciano to-turquesa text-marinho font-bold rounded-lg hover:from-turquesa hover:to-ciano transform hover:scale-105 transition-all duration-200 shadow-lg">
-            Falar com especialista
+            {t("services.notfound.cta")}
           </button>
         </div>
       </div>

@@ -31,54 +31,54 @@ export default function ModernHero() {
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 mb-6">
               <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
               <span className="text-green-400 text-sm font-medium">
-                Disponível para novos projetos
+                {t("hero.badge.available")}
               </span>
             </div>
 
-            {/* Headline focado no cliente */}
+            {/* Headline focado em paixão */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6">
-              <span className="text-gray-300">Transformo suas</span>
+              <span className="text-gray-300">Desenvolvedor</span>
               <br />
-              <span className="text-ciano">ideias digitais</span>
+              <span className="text-ciano">Full Stack</span>
               <br />
-              <span className="text-gray-300">em</span>{" "}
-              <span className="text-turquesa">resultados reais</span>
+              <span className="text-gray-300">apaixonado por</span>{" "}
+              <span className="text-turquesa">código limpo</span>
             </h1>
 
-            {/* Subtitle focado em valor */}
+            {/* Subtitle focado em dedicação */}
             <p className="text-xl sm:text-2xl text-gray-300 mb-6 font-medium">
-              Desenvolvedor Full Stack especializado em soluções que{" "}
-              <span className="text-ciano font-bold">geram receita</span> e{" "}
-              <span className="text-turquesa font-bold">reduzem custos</span>{" "}
-              para seu negócio
+              Criando soluções web modernas com{" "}
+              <span className="text-ciano font-bold">React</span>,{" "}
+              <span className="text-turquesa font-bold">Node.js</span> e muito
+              entusiasmo
             </p>
 
             {/* Value proposition */}
             <p className="text-lg text-gray-400 mb-8 max-w-xl">
-              Mais de 50 projetos entregues • ROI médio de 300% • Prazo médio
-              reduzido em 40%
+              Projetos reais entregues • Stack moderno • Sempre aprendendo e
+              evoluindo
             </p>
 
-            {/* Resultados impressionantes */}
+            {/* Estatísticas realistas */}
             <div className="grid grid-cols-3 gap-6 mb-8">
               <div className="text-center">
                 <div className="text-2xl sm:text-3xl font-bold text-ciano">
-                  R$ 2M+
+                  8+
                 </div>
-                <div className="text-sm text-gray-400">Em vendas geradas</div>
+                <div className="text-sm text-gray-400">Projetos</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl sm:text-3xl font-bold text-turquesa">
-                  50+
+                  2+
                 </div>
-                <div className="text-sm text-gray-400">Projetos entregues</div>
+                <div className="text-sm text-gray-400">Anos de experiência</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl sm:text-3xl font-bold text-green-400">
-                  98%
+                  100%
                 </div>
                 <div className="text-sm text-gray-400">
-                  Clientes satisfeitos
+                  Dedicado ao aprendizado
                 </div>
               </div>
             </div>
@@ -89,13 +89,13 @@ export default function ModernHero() {
                 onClick={() => scrollToSection("contact")}
                 className="px-8 py-4 bg-ciano text-marinho font-bold rounded-lg hover:bg-turquesa transform hover:scale-105 transition-all duration-200 shadow-lg text-lg"
               >
-                Começar meu projeto agora
+                {t("hero.cta.start")}
               </button>
               <button
                 onClick={() => scrollToSection("projects")}
                 className="px-8 py-4 bg-transparent border-2 border-ciano text-ciano font-bold rounded-lg hover:bg-ciano hover:text-marinho transition-all duration-200 text-lg"
               >
-                Ver cases de sucesso
+                {t("hero.cta.viewCases")}
               </button>
             </div>
           </div>
@@ -116,18 +116,24 @@ export default function ModernHero() {
 
               {/* Trust badges flutuantes */}
               <div className="absolute -top-4 -right-4 bg-marinho border border-ciano rounded-lg p-3 shadow-lg">
-                <div className="text-ciano font-bold text-sm">5+ anos</div>
-                <div className="text-gray-400 text-xs">Experiência</div>
+                <div className="text-ciano font-bold text-sm">
+                  💻 Junior Dev
+                </div>
+                <div className="text-gray-400 text-xs">Full Stack</div>
               </div>
 
               <div className="absolute -bottom-4 -left-4 bg-marinho border border-green-400 rounded-lg p-3 shadow-lg">
-                <div className="text-green-400 font-bold text-sm">⚡ 24h</div>
-                <div className="text-gray-400 text-xs">Resposta</div>
+                <div className="text-green-400 font-bold text-sm">
+                  📧 Contato
+                </div>
+                <div className="text-gray-400 text-xs">Rápido</div>
               </div>
 
               <div className="absolute top-1/2 -left-6 bg-marinho border border-turquesa rounded-lg p-3 shadow-lg transform -translate-y-1/2">
-                <div className="text-turquesa font-bold text-sm">🏆 Top 1%</div>
-                <div className="text-gray-400 text-xs">Freelancer</div>
+                <div className="text-turquesa font-bold text-sm">
+                  🚀 Crescendo
+                </div>
+                <div className="text-gray-400 text-xs">Aprendendo</div>
               </div>
             </div>
           </div>

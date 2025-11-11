@@ -1,7 +1,9 @@
 "use client";
 import { useState } from "react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function ProfessionalContact() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -65,21 +67,21 @@ export default function ProfessionalContact() {
   ];
 
   const budgetRanges = [
-    "R$ 5.000 - R$ 15.000",
-    "R$ 15.000 - R$ 30.000",
-    "R$ 30.000 - R$ 50.000",
-    "R$ 50.000+",
-    "Quero uma cotação",
+    t("contact.budget.1"),
+    t("contact.budget.2"),
+    t("contact.budget.3"),
+    t("contact.budget.4"),
+    t("contact.budget.5"),
   ];
 
   const projectTypes = [
-    "Website/Landing Page",
-    "E-commerce",
-    "Sistema Web",
-    "App Mobile",
-    "MVP/Startup",
-    "Consultoria",
-    "Outro",
+    t("contact.projectTypes.website"),
+    t("contact.projectTypes.ecommerce"),
+    t("contact.projectTypes.webapp"),
+    t("contact.projectTypes.mobile"),
+    t("contact.projectTypes.mvp"),
+    t("contact.projectTypes.consulting"),
+    t("contact.projectTypes.other"),
   ];
 
   return (
@@ -91,12 +93,10 @@ export default function ProfessionalContact() {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-black text-white mb-6">
-            Vamos transformar sua <span className="text-ciano">ideia</span> em{" "}
-            <span className="text-turquesa">realidade</span>
+            {t("contact.header.title")}
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Pronto para começar seu projeto? Entre em contato agora e receba uma
-            proposta personalizada em até 24 horas.
+            {t("contact.header.subtitle")}
           </p>
         </div>
 
@@ -104,14 +104,14 @@ export default function ProfessionalContact() {
           {/* Contact Form */}
           <div className="bg-gray-800/50 border border-gray-700 rounded-2xl p-8">
             <h3 className="text-2xl font-bold text-white mb-6">
-              Conte-me sobre seu projeto
+              {t("contact.form.title")}
             </h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-gray-300 text-sm font-medium mb-2">
-                    Nome completo *
+                    {t("contact.form.name")}
                   </label>
                   <input
                     type="text"
@@ -119,14 +119,14 @@ export default function ProfessionalContact() {
                     value={formData.name}
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-ciano"
-                    placeholder="Seu nome"
+                    placeholder={t("contact.form.placeholder.name")}
                     required
                   />
                 </div>
 
                 <div>
                   <label className="block text-gray-300 text-sm font-medium mb-2">
-                    Email *
+                    {t("contact.form.email")}
                   </label>
                   <input
                     type="email"
@@ -134,7 +134,7 @@ export default function ProfessionalContact() {
                     value={formData.email}
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-ciano"
-                    placeholder="seu@email.com"
+                    placeholder={t("contact.form.placeholder.email")}
                     required
                   />
                 </div>
@@ -142,7 +142,7 @@ export default function ProfessionalContact() {
 
               <div>
                 <label className="block text-gray-300 text-sm font-medium mb-2">
-                  Empresa/Projeto
+                  {t("contact.form.company")}
                 </label>
                 <input
                   type="text"
@@ -150,14 +150,14 @@ export default function ProfessionalContact() {
                   value={formData.company}
                   onChange={handleChange}
                   className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-ciano"
-                  placeholder="Nome da empresa ou projeto"
+                  placeholder={t("contact.form.placeholder.company")}
                 />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-gray-300 text-sm font-medium mb-2">
-                    Tipo de projeto *
+                    {t("contact.form.projectType")}
                   </label>
                   <select
                     name="project"
@@ -166,7 +166,9 @@ export default function ProfessionalContact() {
                     className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-ciano"
                     required
                   >
-                    <option value="">Selecione...</option>
+                    <option value="">
+                      {t("contact.form.projectType.placeholder")}
+                    </option>
                     {projectTypes.map((type) => (
                       <option key={type} value={type}>
                         {type}
@@ -177,7 +179,7 @@ export default function ProfessionalContact() {
 
                 <div>
                   <label className="block text-gray-300 text-sm font-medium mb-2">
-                    Orçamento estimado
+                    {t("contact.form.budget")}
                   </label>
                   <select
                     name="budget"
@@ -185,7 +187,9 @@ export default function ProfessionalContact() {
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-ciano"
                   >
-                    <option value="">Selecione...</option>
+                    <option value="">
+                      {t("contact.form.budget.placeholder")}
+                    </option>
                     {budgetRanges.map((range) => (
                       <option key={range} value={range}>
                         {range}
@@ -197,7 +201,7 @@ export default function ProfessionalContact() {
 
               <div>
                 <label className="block text-gray-300 text-sm font-medium mb-2">
-                  Urgência
+                  {t("contact.form.urgency")}
                 </label>
                 <div className="flex gap-4">
                   <label className="flex items-center">
@@ -209,7 +213,9 @@ export default function ProfessionalContact() {
                       onChange={handleChange}
                       className="mr-2"
                     />
-                    <span className="text-gray-300">Normal (4-8 semanas)</span>
+                    <span className="text-gray-300">
+                      {t("contact.urgency.normal")}
+                    </span>
                   </label>
                   <label className="flex items-center">
                     <input
@@ -220,14 +226,16 @@ export default function ProfessionalContact() {
                       onChange={handleChange}
                       className="mr-2"
                     />
-                    <span className="text-gray-300">Urgente (2-4 semanas)</span>
+                    <span className="text-gray-300">
+                      {t("contact.urgency.urgent")}
+                    </span>
                   </label>
                 </div>
               </div>
 
               <div>
                 <label className="block text-gray-300 text-sm font-medium mb-2">
-                  Descreva seu projeto *
+                  {t("contact.form.message")}
                 </label>
                 <textarea
                   name="message"
@@ -235,7 +243,7 @@ export default function ProfessionalContact() {
                   onChange={handleChange}
                   rows={5}
                   className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-ciano resize-none"
-                  placeholder="Conte-me sobre seu projeto, objetivos, funcionalidades desejadas, prazo, etc."
+                  placeholder={t("contact.form.placeholder.message")}
                   required
                 ></textarea>
               </div>

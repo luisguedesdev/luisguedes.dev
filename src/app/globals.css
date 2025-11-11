@@ -1,18 +1,23 @@
 @import "tailwindcss";
 
+/* Custom color palette */
 :root {
-  --background: #0a0f24; /* Azul marinho quase preto */
-  --foreground: #ffffff;
-  --ciano: #00d1ff;
-  --turquesa: #00a2da;
-  --azul: #0073b4;
+  --background: #ffffff;
+  --foreground: #111827;
+  --primary: #3b82f6; /* blue-500 */
+  --secondary: #1d4ed8; /* blue-700 */
+  --accent: #1e3a8a; /* blue-900 */
+  --dark-bg: #111827; /* gray-900 */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0f24;
-    --foreground: #ededed;
-  }
+/* Dark theme overrides */
+.dark {
+  --background: #111827; /* gray-900 */
+  --foreground: #f9fafb; /* gray-50 */
+  --primary: #60a5fa; /* blue-400 */
+  --secondary: #3b82f6; /* blue-500 */
+  --accent: #2563eb; /* blue-600 */
+  --dark-bg: #111827; /* gray-900 */
 }
 
 body {
@@ -38,22 +43,23 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--ciano);
+  color: var(--primary);
   font-family: "Inter", Arial, Helvetica, sans-serif;
+  text-decoration: none;
 }
 
 a {
-  color: var(--turquesa);
+  color: var(--secondary);
   text-decoration: none;
   transition: color 0.2s;
 }
 a:hover {
-  color: var(--ciano);
+  color: var(--primary);
 }
 
 .card {
-  background: rgba(0, 209, 255, 0.05);
-  border: 1px solid var(--azul);
+  background: rgba(59, 130, 246, 0.05);
+  border: 1px solid var(--accent);
   border-radius: 1rem;
   padding: 1.5rem;
   box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.08);
@@ -61,5 +67,73 @@ a:hover {
 }
 .card:hover {
   transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 4px 24px 0 rgba(0, 209, 255, 0.1);
+  box-shadow: 0 4px 24px 0 rgba(59, 130, 246, 0.1);
+}
+
+/* Custom animations */
+@keyframes gradient-x {
+  0%,
+  100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-gradient-x {
+  animation: gradient-x 3s ease infinite;
+  text-decoration: none !important;
+  -webkit-text-decoration: none !important;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-in-out;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3b82f6, #1d4ed8);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #1d4ed8, #1e3a8a);
+}
+
+/* Dark scrollbar */
+.dark ::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #60a5fa, #3b82f6);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #3b82f6, #2563eb);
 }
