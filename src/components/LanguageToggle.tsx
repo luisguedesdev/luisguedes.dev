@@ -5,22 +5,24 @@ export default function LanguageToggle() {
   const { language, setLanguage } = useLanguage();
 
   return (
-    <div className="flex items-center bg-gray-800 rounded-lg p-1">
+    <div className="flex items-center rounded-lg border border-slate-200/70 bg-slate-100 p-1 shadow-sm dark:border-white/10 dark:bg-slate-800/80">
       <button
         onClick={() => setLanguage("pt")}
         className={`px-3 py-1 rounded text-sm font-medium transition-all ${
-          language === "pt" ? "text-white" : "text-gray-400 hover:text-white"
+          language === "pt"
+            ? "bg-gradient-to-r from-orange-500 to-amber-500 text-white"
+            : "text-slate-500 hover:text-slate-700 dark:text-slate-300 dark:hover:text-slate-100"
         }`}
-        style={language === "pt" ? { backgroundColor: "var(--primary)" } : {}}
       >
         PT
       </button>
       <button
         onClick={() => setLanguage("en")}
         className={`px-3 py-1 rounded text-sm font-medium transition-all ${
-          language === "en" ? "text-white" : "text-gray-400 hover:text-white"
+          language === "en"
+            ? "bg-gradient-to-r from-orange-500 to-amber-500 text-white"
+            : "text-slate-500 hover:text-slate-700 dark:text-slate-300 dark:hover:text-slate-100"
         }`}
-        style={language === "en" ? { backgroundColor: "var(--primary)" } : {}}
       >
         EN
       </button>

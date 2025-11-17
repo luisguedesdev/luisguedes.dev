@@ -1,7 +1,6 @@
 import "./globals.css";
 import { ThemeProvider } from "../contexts/ThemeContext";
 import { LanguageProvider } from "../contexts/LanguageContext";
-import LoadingScreen from "../components/LoadingScreen";
 import type { ReactNode } from "react";
 
 export const metadata = {
@@ -22,7 +21,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       >
         <ThemeProvider>
           <LanguageProvider>
-            <LoadingScreen />
             <div
               style={{ minHeight: "100vh", background: "var(--background)" }}
             >
